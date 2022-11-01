@@ -167,7 +167,6 @@ void inkrement3(char* argv[], int arc) {
 	file.open(argv[3], ios::in);
 
 	
-
 	
 
 	while (getline(file, line)) {
