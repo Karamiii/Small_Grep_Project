@@ -4,7 +4,6 @@
 #include<cstring>
 
 
-
 using namespace std;
 
 // making a public size variable
@@ -14,7 +13,6 @@ const int koko = 25;
 void basic();
 void inkrement2(char* argv[], int arc);
 void inkrement3(char* argv[], int arc);
-
 
 
  //Reading users command line arguments
@@ -30,7 +28,6 @@ int main(int arc, char* argv[]) {
 		basic();
 	}
 
-
 	if (arc == 3) {
 
 		inkrement2(argv, arc);
@@ -41,7 +38,6 @@ int main(int arc, char* argv[]) {
 		inkrement3(argv, arc);
 
 	}
-
 
 }
 
@@ -117,11 +113,8 @@ void basic() {
 	}
 
 	// Presenting the results
-
 	tulos[terve2] = '\0';
-
 	cout << endl << endl;
-
 	if (laskuri > 0) {
 		cout << '"' << search_string << '"' << " Found in " << '"' << name << '"' << " in position " << pos_counter;
 	}
@@ -130,7 +123,6 @@ void basic() {
 		cout << '"' << search_string << '"' << " NOT found in " << '"' << name << '"';
 	}
 	cout << endl << endl;
-
 
 }
 
@@ -170,9 +162,7 @@ void inkrement3(char* argv[], int arc) {
 	int occur_counter = 0;
 	string compare;
 	string line;
-
 	compare = argv[1];
-
 
 	//adding the parameters
 	
@@ -180,16 +170,9 @@ void inkrement3(char* argv[], int arc) {
 	string ol = "-ol";
 	string oo = "-oo";
 
-	
-
 	word = argv[2];
 
-
 	file.open(argv[3], ios::in);
-
-	
-	
-
 	while (getline(file, line)) {
 		line_counter++;
 		size_t pos = line.find(word);
@@ -204,12 +187,10 @@ void inkrement3(char* argv[], int arc) {
 
 		if (compare == oo) {
 
-
 			if (pos != string::npos) {
 				cout << line << endl;
 				occur_counter++;
 			}
-
 
 		}
 	
@@ -221,8 +202,6 @@ void inkrement3(char* argv[], int arc) {
 		cout << "Occurences of lines containing \"" << word << "\": " << occur_counter;
 	
 	}
-
 	cout << endl << endl;
-
 }
 
