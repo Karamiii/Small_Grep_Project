@@ -171,8 +171,9 @@ void inkrement3(char* argv[], int arc) {
 	string line;
 
 	compare = argv[1];
-	
 
+
+	
 	string olo = "-olo";
 	string ol = "-ol";
 	string oo = "-oo";
