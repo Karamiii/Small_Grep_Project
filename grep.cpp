@@ -1,23 +1,29 @@
 #include<iostream>
 #include<string>
 #include<fstream>
-#include <cstring>
+#include<cstring>
 
 
 
 using namespace std;
+
+// making a public size variable
 const int koko = 25;
+
+//functions to different levels
 void basic();
 void inkrement2(char* argv[], int arc);
 void inkrement3(char* argv[], int arc);
 
 
 
+ //Reading users command line arguments
 int main(int arc, char* argv[]) {
 
 	cout << endl;
 	cout << endl;
 
+// The amount of arguments determines the function that will be used
 
 	if (arc == 1) {
 
@@ -40,12 +46,14 @@ int main(int arc, char* argv[]) {
 }
 
 
+/*basic funtion asks from the user a string and a search string
+It will then compare the search string to the original string and try to find
+occurances from the strings. The position of the simalarities is allso listed*/
 
 void basic() {
 
-
+	// creating arrays to store user strings and the result
 	char search_string[koko];
-
 	char name[koko];
 	char tulos[koko];
 	
@@ -54,7 +62,7 @@ void basic() {
 	cin.getline(name, koko);
 
 
-
+	//measuring length of the array and adding a NULL at the end
 	int terve = strlen(name);
 	name[terve + 1] = '\0';
 
@@ -64,9 +72,11 @@ void basic() {
 	cin.getline(search_string, koko);
 	cout << endl;
 
+	//measuring length of the array and adding a NULL at the end
 	int terve2 = strlen(search_string);
 	search_string[terve2 + 1] = '\0';
 
+	// Setting up preparations for the searching  
 
 	tulos[0] = '\0';
 
@@ -75,6 +85,10 @@ void basic() {
 	int z = 0;
 	int pos_counter = 0;
 
+	
+	/* Finding the occurances in the strings. This i created my self and works pretty much the same way
+	as the public "string::find function. I use the public funtion later on, but i wanted to create my own implementation first"	
+	*/
 	for (int i = 0; i < koko; i++) {
 		name[i];
 		search_string[z];
@@ -102,6 +116,8 @@ void basic() {
 
 	}
 
+	// Presenting the results
+
 	tulos[terve2] = '\0';
 
 	cout << endl << endl;
@@ -118,7 +134,8 @@ void basic() {
 
 }
 
-
+/* inkrement2 function finds a word given by the user from a given file
+*/
 void inkrement2(char* argv[], int arc) {
 
 	string line;
@@ -127,9 +144,9 @@ void inkrement2(char* argv[], int arc) {
 
 	word = argv[1];
 
-
+	//Open the user given file
 	file.open(argv[2], ios::in);
-
+	// public string::find function
 	while (getline(file, line)) {
 
 		size_t pos = line.find(word);
@@ -142,7 +159,7 @@ void inkrement2(char* argv[], int arc) {
 
 }
 
-
+/* inkrement3 function does the same as inkrement2 but has more options for parameters*/
 void inkrement3(char* argv[], int arc) {
 
 
@@ -154,6 +171,7 @@ void inkrement3(char* argv[], int arc) {
 	string line;
 
 	compare = argv[1];
+	
 
 	string olo = "-olo";
 	string ol = "-ol";
