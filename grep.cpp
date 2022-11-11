@@ -134,8 +134,8 @@ void basic() {
 
 }
 
-/* inkrement2 function finds a word given by the user from a given file
-*/
+// inkrement2 function finds sentences containing a word given by the user from a given file
+
 void inkrement2(char* argv[], int arc) {
 
 	string line;
@@ -159,7 +159,8 @@ void inkrement2(char* argv[], int arc) {
 
 }
 
-/* inkrement3 function does the same as inkrement2 but has more options for parameters*/
+/* inkrement3 function does the same as inkrement2 but has more options for parameters.
+For example "-olo" adds line numbers of the sencentces containing the given word.*/
 void inkrement3(char* argv[], int arc) {
 
 
@@ -173,6 +174,7 @@ void inkrement3(char* argv[], int arc) {
 	compare = argv[1];
 
 
+	//adding the parameters
 	
 	string olo = "-olo";
 	string ol = "-ol";
